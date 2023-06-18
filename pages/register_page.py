@@ -2,18 +2,18 @@ from selenium.webdriver.common.by import By
 from base_page import BasePage
 
 
-class LoginPage(BasePage):
+class registerPage(BasePage):
     EMAIL_FIELD=(By.ID, "reg_email")
     PASSWORD_FIELD=(By.ID, "reg_password")
-    LOGIN_BUTTON=(By.XPATH, "//*[@id='customer_login']/div[2]/form/p[3]/button")
+    register_BUTTON=(By.XPATH, "//*[@id='customer_login']/div[2]/form/p[3]/button")
     error_message_locater=(By.CLASS_NAME, 'woocommerce-error')
     username_locater=(By.XPATH, "/html/body/div/div[2]/div/div[2]/main/article/div/div/div/p[1]/strong[1]")
     def enter_email(self,email):
          self.input_text(self.EMAIL_FIELD,email)
     def enter_password(self,password):
         self.input_text(self.PASSWORD_FIELD,password)
-    def click_login_button(self):
-        self.click(self.LOGIN_BUTTON)
+    def click_register_button(self):
+        self.click(self.register_BUTTON)
 
     def get_the_text_error_message(self):
        element= self.find_locater_error_message(self.error_message_locater)
